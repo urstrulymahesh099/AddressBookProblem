@@ -15,21 +15,21 @@ namespace AddressBookProblem
         public void CreateContact()
         {
             Contacts contact = new Contacts();
-            Console.WriteLine("Enetr First Nmae");
+            Console.WriteLine("Enetr First Name");
             contact.FirstName = Console.ReadLine();
-            Console.WriteLine("Enetr First Nmae");
+            Console.WriteLine("Enetr Last Nmae");
             contact.LastName = Console.ReadLine();
-            Console.WriteLine("Enetr Address");
+            Console.WriteLine("Enter Address");
             contact.Address = Console.ReadLine();
-            Console.WriteLine("Enetr city");
+            Console.WriteLine("Enter city");
             contact.City = Console.ReadLine();
-            Console.WriteLine("Enetr State");
+            Console.WriteLine("Enter State");
             contact.State = Console.ReadLine();
-            Console.WriteLine("Enetr Zip");
+            Console.WriteLine("Enter Zip");
             contact.Zip=Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enetr Phone Number");
-            contact.PhoneNumber = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enetr email");
+            Console.WriteLine("Enter Phone Number");
+            contact.PhoneNumber = Convert.ToInt64(Console.ReadLine());
+            Console.WriteLine("Enter email");
             contact.Email = Console.ReadLine();
             data.Add(contact);
 
@@ -103,6 +103,21 @@ namespace AddressBookProblem
             }
 
         }
-        
+        public void DeleteContact()
+        {
+
+            Console.WriteLine("Select the name what you want to delete Contact");
+            string name = Console.ReadLine();
+            foreach (var contact in data.ToList())
+            {
+
+                if (contact.FirstName == name || contact.LastName == name)
+                {
+                    data.Remove(contact);
+                }
+                Console.WriteLine("Contact Deleted Successfully");
+            }
+        }
+
     }
 }

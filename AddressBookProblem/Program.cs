@@ -9,7 +9,7 @@ namespace AddressBookProblem
             Console.ResetColor();
             AddressBook addressBook = new AddressBook();
             Console.WriteLine("");
-            Console.WriteLine("1.CreateaContacts\n2.DisplayContact\n3.EditContact");
+            Console.WriteLine("1.CreateaContacts\n2.DisplayContact\n3.EditContact\n4.DeleteContact");
             while(true)
             {
                 int choice = Convert.ToInt32(Console.ReadLine());
@@ -27,8 +27,12 @@ namespace AddressBookProblem
                         addressBook.EditContact();
                         Console.WriteLine("*****Please select next choice*****");
                         break;
+                    case 4:
+                        addressBook.DeleteContact();
+                        Console.WriteLine("*****Please select next choice*****");
+                        break;
                     default:
-                        Console.WriteLine("Please Select Choice again");
+                        Console.WriteLine("Please Select error-free Choice \n Select again ...........");
                         break;
                 }
             }
