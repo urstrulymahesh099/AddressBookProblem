@@ -29,8 +29,6 @@ namespace AddressBookProblem
             Console.WriteLine("Enetr email");
             contact.Email = Console.ReadLine();
 
-            Console.WriteLine("FirstName" + contact.FirstName+"\n"+ "LastName" + contact.LastName+"\n"+ "Address"+ contact.Address+"\n"+ "City"+ contact.City+"\n"+"State"+contact.State+"\n"+"Zip"+contact.Zip+"\n"+contact.Zip+"\n"+"email"+contact.Email+"\n"+"ph no"+contact.PhoneNumber);
-
         }
     }
 }
