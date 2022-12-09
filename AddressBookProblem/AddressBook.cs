@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
+using System.Net;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +11,7 @@ namespace AddressBookProblem
 {
     internal class AddressBook
     {
+        List<Contacts> data = new List<Contacts>();
         public void CreateContact()
         {
             Contacts contact = new Contacts();
@@ -28,9 +31,18 @@ namespace AddressBookProblem
             contact.PhoneNumber = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enetr email");
             contact.Email = Console.ReadLine();
-
-            Console.WriteLine("FirstName" + contact.FirstName+"\n"+ "LastName" + contact.LastName+"\n"+ "Address"+ contact.Address+"\n"+ "City"+ contact.City+"\n"+"State"+contact.State+"\n"+"Zip"+contact.Zip+"\n"+contact.Zip+"\n"+"email"+contact.Email+"\n"+"ph no"+contact.PhoneNumber);
+            data.Add(contact);
 
         }
+        public void DisplayContact()
+        {
+            Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("*********Contacts*********");
+            Console.ResetColor();
+            foreach(Contacts records in data)
+            {
+                Console.WriteLine("FirstName==>>  " + records.FirstName + "\n" + "LastName==>>  " + records.LastName + "\n" + "Address==>>  " + records.Address + "\n" + "City==>>  " + records.City + "\n" + "State==>>  " + records.State + "\n" + "Zip==>> " + records.Zip + "\n" + "email==>>  " + records.Email + "\n" + "ph no==>>  " + records.PhoneNumber);
+            }
+        }
+        
     }
 }
